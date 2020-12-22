@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+.card {
+  opacity: 1;
+  transition: opacity .5s linear;
+  background-image: linear-gradient(#111, #050505);
+  display: block;
+  width: 600px;
+  min-height: 200px;
+  cursor: pointer;
+  padding: 15px;
+  margin: 350px 50px;
+  border: 3px solid var(--primary);
+  box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--green),
+        20px -20px 0 -3px var(--background), 20px -20px var(--yellow),
+        30px -30px 0 -3px var(--background), 30px -30px var(--orange),
+        40px -40px 0 -3px var(--background), 40px -40px var(--red);
+}
+.hide{
+  opacity: 0;
+  pointer-events: none;
+}
+.show{
+  opacity: 1;
+  transition: opacity .5s linear;
+}
+.card:hover {
+  animation: shadow-wave 0.5s ease infinite;
+}
+@keyframes shadow-wave {
+  0% {
+    border: 3px solid var(--primary);
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--green),
+      20px -20px 0 -3px var(--background), 20px -20px var(--yellow),
+      30px -30px 0 -3px var(--background), 30px -30px var(--orange),
+      40px -40px 0 -3px var(--background), 40px -40px var(--red);
+  }
+  20% {
+    border: 3px solid var(--red);
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--primary),
+      20px -20px 0 -3px var(--background), 20px -20px var(--green),
+      30px -30px 0 -3px var(--background), 30px -30px var(--yellow),
+      40px -40px 0 -3px var(--background), 40px -40px var(--orange);
+  }
+  40% {
+    border: 3px solid var(--orange);
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--red),
+      20px -20px 0 -3px var(--background), 20px -20px var(--primary),
+      30px -30px 0 -3px var(--background), 30px -30px var(--green),
+      40px -40px 0 -3px var(--background), 40px -40px var(--yellow);
+  }
+  60% {
+    border: 3px solid var(--yellow);
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--orange),
+      20px -20px 0 -3px var(--background), 20px -20px var(--red),
+      30px -30px 0 -3px var(--background), 30px -30px var(--primary),
+      40px -40px 0 -3px var(--background), 40px -40px var(--green);
+  }
+  80% {
+    border: 3px solid var(--green);
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--yellow),
+      20px -20px 0 -3px var(--background), 20px -20px var(--orange),
+      30px -30px 0 -3px var(--background), 30px -30px var(--red),
+      40px -40px 0 -3px var(--background), 40px -40px var(--primary);
+  }
+  100% {
+    border: 3px solid var(--primary);
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--green),
+      20px -20px 0 -3px var(--background), 20px -20px var(--yellow),
+      30px -30px 0 -3px var(--background), 30px -30px var(--orange),
+      40px -40px 0 -3px var(--background), 40px -40px var(--red);
+  }
+  
+}
+:root {
+  --primary: #22D2A0;
+  --secondary: #192824;
+  --background: #192824;
+  --green: #1FC11B;
+  --yellow: #FFD913;
+  --orange: #FF9C55;
+  --red: #FF5555;
+} 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(#111, #050505);
+  background-size: 2px 3px;
+  font-family: "Archivo", sans-serif;
+  color: var(--primary);
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+.modal{
+  z-index:3;
+  display:none;
+  padding-top:100px;
+  position:fixed;
+  left:0;top:0;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background-color:rgb(0,0,0);
+  background-color:rgba(0,0,0,0.4);
+}
+.modal-content{
+  margin:auto;
+  position:relative;
+  padding:0;outline:0;
+  width:600px;
+}
+@media (max-width:600px){.modal-content{margin:0 10px;width:auto!important}.modal{padding-top:30px}}
+@media (max-width:768px){.modal-content{width:500px}.modal{padding-top:50px}}
+@media (min-width:993px){.modal-content{width:900px}}
+
+.headshot {
+	flex-shrink: 0;
+	margin: 20px;
+	height: calc(360px + 6vw);
+	width: calc(360px + 6vw);
+	border: calc(8px + 0.2vw) solid transparent;
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	background-size: cover;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.headshot-1 {
+  opacity: 1;
+  transition: opacity .5s linear;
+	border-radius: 30%;
+	background-image: url("../img/we_both.jpg"), linear-gradient(#f9f047, #0fd850);
+}
+
+.headshot-2 {
+  opacity: 1;
+  transition: opacity .5s linear;
+	border-radius: 50%;
+	background-image: url("../img/me.jpg"), linear-gradient(to bottom right, #ff3cac, #562b7c, #2b86c5);
+}
+
+.headshot-3 {
+  opacity: 1;
+  transition: opacity .5s linear;
+	border-radius: 50% 10%;
+	background-image: url("../img/her.jpg"), linear-gradient(to bottom left, #f83600, #f9d423);
+}
+.card p {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.card h2 {
+  font-size: 14px;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: normal;
+}
+.btn-flushed {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-flushed:after, .btn-flushed:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #333;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.btn-flushed:after {
+  -webkit-transform: translate(9px, 9px);
+          transform: translate(9px, 9px);
+}
+.btn-flushed:before {
+  -webkit-transform: translate(-9px, -9px);
+          transform: translate(-9px, -9px);
+}
+.btn-flushed:active:after, .btn-flushed:active:before {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+.btn-flushed:focus{
+  outline: none;
+}
+
+.btn-flushed1 {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-flushed1:after, .btn-flushed1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid#22D2A0;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.btn-flushed1:after {
+  -webkit-transform: translate(9px, 9px);
+          transform: translate(9px, 9px);
+}
+.btn-flushed1:before {
+  -webkit-transform: translate(-9px, -9px);
+          transform: translate(-9px, -9px);
+}
+.btn-flushed1:active:after, .btn-flushed1:active:before {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+.btn-flushed1:focus{
+  outline: none;
+}
+
+.btn-flushed2 {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-flushed2:after, .btn-flushed2:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid#1FC11B;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.btn-flushed2:after {
+  -webkit-transform: translate(9px, 9px);
+          transform: translate(9px, 9px);
+}
+.btn-flushed2:before {
+  -webkit-transform: translate(-9px, -9px);
+          transform: translate(-9px, -9px);
+}
+.btn-flushed2:active:after, .btn-flushed2:active:before {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+.btn-flushed2:focus{
+  outline: none;
+}
+
+.btn-flushed3 {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-flushed3:after, .btn-flushed3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #FFD913;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.btn-flushed3:after {
+  -webkit-transform: translate(9px, 9px);
+          transform: translate(9px, 9px);
+}
+.btn-flushed3:before {
+  -webkit-transform: translate(-9px, -9px);
+          transform: translate(-9px, -9px);
+}
+.btn-flushed3:active:after, .btn-flushed3:active:before {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+.btn-flushed3:focus{
+  outline: none;
+}
+
+.btn-flushed4 {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-flushed4:after, .btn-flushed4:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #FF9C55;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.btn-flushed4:after {
+  -webkit-transform: translate(9px, 9px);
+          transform: translate(9px, 9px);
+}
+.btn-flushed4:before {
+  -webkit-transform: translate(-9px, -9px);
+          transform: translate(-9px, -9px);
+}
+.btn-flushed4:active:after, .btn-flushed4:active:before {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+.btn-flushed4:focus{
+  outline: none;
+}
+
+.btn-flushed5 {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-flushed5:after, .btn-flushed5:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #FF5555;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.btn-flushed5:after {
+  -webkit-transform: translate(9px, 9px);
+          transform: translate(9px, 9px);
+}
+.btn-flushed5:before {
+  -webkit-transform: translate(-9px, -9px);
+          transform: translate(-9px, -9px);
+}
+.btn-flushed5:active:after, .btn-flushed5:active:before {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+.btn-flushed5:focus{
+  outline: none;
+}
