@@ -1,0 +1,69 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    function show_buttons(){
+      $('#btn-headshot-1').removeClass('hide');
+      $('#btn-headshot-1').addClass('headshot');
+      $('#btn-headshot-1').addClass('headshot-1');
+      $('#btn-headshot-2').removeClass('hide');
+      $('#btn-headshot-2').addClass('headshot');
+      $('#btn-headshot-2').addClass('headshot-2');
+      $('#btn-headshot-3').removeClass('hide');
+      $('#btn-headshot-3').addClass('headshot');
+      $('#btn-headshot-3').addClass('headshot-3');
+      $('#happy').removeClass('hide');
+      $('#happy').addClass('show');
+    };
+    window.setTimeout( show_buttons, 200);
+    $('#btn-headshot-1').click(function(){
+      $('#modal-we').show();
+    });
+    $('#btn-headshot-2').click(function(){
+      $('#modal-me').show();
+    });
+    $('#btn-headshot-3').click(function(){
+      $('#modal-her').show();
+    });
+    $('#btn-modal-we').click(function(){
+      $('#modal-we').hide();
+    });
+    $('#btn-modal-me').click(function(){
+      $('#modal-me').hide();
+    });
+    $('#btn-modal-her').click(function(){
+      $('#modal-her').hide();
+    });
+  });
+</script>
+<div class="hide" id="happy">    
+  <img src="img/feliz.png" style="display: block">
+  <img src="img/aniverssauro.png" style="display: block">
+  <br>
+  :D
+</div>
+<button class="hide" id="btn-headshot-1"></button>
+<button class="hide" id="btn-headshot-2"></button>
+<button class="hide" id="btn-headshot-3"></button>
+<div class="modal" id="modal-we">
+  <div class="modal-content">
+    <button id="btn-modal-we">X</button>
+    <div>
+      <img src="img/we_both.jpg">
+    </div>
+  </div>
+</div>
+<div class="modal" id="modal-me">
+  <div class="modal-content">
+    <button id="btn-modal-me">X</button>
+    <div>
+      <img src="img/me.jpg">
+    </div>
+  </div>
+</div>
+<div class="modal" id="modal-her">
+  <div class="modal-content">
+    <button id="btn-modal-her">X</button>
+    <div>
+      <img src="img/her.jpg">
+    </div>
+  </div>
+</div>
